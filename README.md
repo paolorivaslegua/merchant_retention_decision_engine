@@ -166,6 +166,19 @@ The app loads saved artifacts and provides:
 - a filterable table of top merchants to retain
 - a sidebar operator guide download for non-technical users
 
+## Deploy as a public website
+
+The cleanest option for this project is Streamlit Community Cloud because the app is already built in Streamlit and the repository is hosted on GitHub.
+
+High-level deployment steps:
+
+1. Push the repository to GitHub.
+2. Create or sign in to a Streamlit Community Cloud account.
+3. Connect your GitHub account to Streamlit Community Cloud.
+4. Deploy this repository and set the app entrypoint to `src/app.py`.
+
+The app is designed to generate its synthetic data, model artifacts, and dashboard outputs automatically on first launch, so it does not require committed CSV outputs to run publicly.
+
 ## Example business outputs
 
 The merchant-level output includes:

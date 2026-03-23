@@ -10,11 +10,13 @@ import streamlit as st
 
 try:
     from . import config
+    from .pipeline import main as run_pipeline
 except ImportError:  # pragma: no cover - allows `streamlit run src/app.py`
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
     import src.config as config
+    from src.pipeline import main as run_pipeline
 
 
 ACTION_ORDER = [
@@ -52,6 +54,26 @@ def _load_artifact(path_str: str) -> pd.DataFrame | None:
     if not path.exists():
         return None
     return pd.read_csv(path)
+
+
+def _dashboard_artifacts_ready() -> bool:
+    return all(
+        path.exists()
+        for path in (
+            config.MERCHANT_OUTPUT_PATH,
+            config.METRICS_OUTPUT_PATH,
+            config.COEFFICIENTS_OUTPUT_PATH,
+        )
+    )
+
+
+@st.cache_resource(show_spinner=False)
+def _ensure_dashboard_artifacts() -> str:
+    if _dashboard_artifacts_ready():
+        return "ready"
+
+    run_pipeline()
+    return "generated"
 
 
 def _format_action(action: str) -> str:
@@ -538,6 +560,20 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+try:
+    with st.spinner("Preparing demo portfolio, model, and dashboard artifacts..."):
+        bootstrap_state = _ensure_dashboard_artifacts()
+except Exception as exc:  # pragma: no cover - deployment/runtime safeguard
+    st.error(
+        "The app could not prepare its demo artifacts automatically. Run `python -m src.pipeline` locally or check the deployment logs."
+    )
+    st.exception(exc)
+    st.stop()
+
+if bootstrap_state == "generated":
+    _load_artifact.clear()
+    st.toast("Demo artifacts generated for this session.", icon="✅")
 
 scored_df = _load_artifact(str(config.MERCHANT_OUTPUT_PATH))
 metrics_df = _load_artifact(str(config.METRICS_OUTPUT_PATH))
