@@ -1,0 +1,15 @@
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.cache/
+
+outputs/models/*.joblib
+outputs/figures/*.png
+outputs/tables/*.csv
+data/raw/*.csv
+data/processed/*.csv
