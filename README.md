@@ -85,6 +85,18 @@ After running the pipeline, the project produces:
 - a saved sklearn pipeline in `outputs/models/logistic_regression.joblib`
 - a Streamlit dashboard backed by the generated artifacts
 
+## Visual previews
+
+Expected retention value by action:
+
+![Expected retention value by action](docs/assets/expected_retention_value_by_action.png)
+
+Merchant risk and revenue map:
+
+![Merchant risk and revenue map](docs/assets/risk_vs_gpv_scatter.png)
+
+These are generated pipeline outputs. For a public portfolio repo, you can later add dashboard screenshots alongside them for even faster scanning.
+
 ## Merchant features
 
 The synthetic dataset includes:
