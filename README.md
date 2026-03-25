@@ -19,6 +19,16 @@ How should a payments company identify merchants at risk of churn, decide what r
 
 This project answers that question by combining merchant risk signals, churn scoring, action rules, and expected-value ranking into a single workflow.
 
+## Dashboard overview
+
+Add a full dashboard screenshot here after saving it to:
+
+- `docs/assets/dashboard_overview.png`
+
+```md
+![Dashboard overview](docs/assets/dashboard_overview.png)
+```
+
 ## Why this project
 
 Payments companies often know which merchants are struggling only after GPV declines materially or a merchant stops processing. This prototype shows how a retention team can move earlier by combining:
@@ -95,7 +105,7 @@ Merchant risk and revenue map:
 
 ![Merchant risk and revenue map](docs/assets/risk_vs_gpv_scatter.png)
 
-These are generated pipeline outputs. For a public portfolio repo, you can later add dashboard screenshots alongside them for even faster scanning.
+These are generated pipeline outputs. For a public portfolio repo, the strongest presentation is to pair them with actual dashboard screenshots.
 
 ## Merchant features
 
@@ -166,6 +176,18 @@ The app loads saved artifacts and provides:
 - a filterable table of top merchants to retain
 - a sidebar operator guide download for non-technical users
 
+## Dashboard views
+
+### Risk and revenue map with ranked merchant queue
+
+Add the actionability screenshot here after saving it to:
+
+- `docs/assets/risk_revenue_priority.png`
+
+```md
+![Risk and revenue map with ranked merchant queue](docs/assets/risk_revenue_priority.png)
+```
+
 ## Deploy as a public website
 
 The cleanest option for this project is Streamlit Community Cloud because the app is already built in Streamlit and the repository is hosted on GitHub.
@@ -198,6 +220,16 @@ The project uses logistic regression intentionally:
 - fast to run locally
 - coefficients can be inspected directly
 - sufficient for a prototype where business interpretability matters
+
+### Model diagnostics and feature direction
+
+Add the diagnostics screenshot here after saving it to:
+
+- `docs/assets/model_diagnostics.png`
+
+```md
+![Model diagnostics and coefficients](docs/assets/model_diagnostics.png)
+```
 
 ## Why synthetic data is acceptable here
 
