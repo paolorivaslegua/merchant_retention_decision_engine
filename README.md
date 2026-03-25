@@ -22,10 +22,6 @@ This project answers that question by combining merchant risk signals, churn sco
 ## Dashboard overview
 
 ![Dashboard overview](docs/assets/dashboard_overview.png)
-<<<<<<< HEAD
-
-=======
->>>>>>> 291a624 (Fix README screenshot references)
 
 ## Why this project
 
@@ -179,10 +175,6 @@ The app loads saved artifacts and provides:
 ### Risk and revenue map with ranked merchant queue
 
 ![Risk and revenue map with ranked merchant queue](docs/assets/risk_revenue_priority.png)
-<<<<<<< HEAD
-
-=======
->>>>>>> 291a624 (Fix README screenshot references)
 
 ## Deploy as a public website
 
@@ -208,22 +200,22 @@ The merchant-level output includes:
 
 This creates an operational queue for a retention team instead of just a risk score.
 
-## Model choice
+## Why this modeling approach fits the product
 
-The project uses logistic regression intentionally:
+This project uses logistic regression on purpose because the goal is not to chase maximum benchmark performance. The goal is to support a believable retention workflow that a business team can understand and act on.
 
-- easy to explain in an interview or portfolio review
-- fast to run locally
-- coefficients can be inspected directly
-- sufficient for a prototype where business interpretability matters
+For a first-pass merchant retention engine, interpretability matters. A risk score is much more useful when it can be explained in terms of concrete merchant signals such as inactivity, GPV trend, chargebacks, support demand, and product adoption. Logistic regression gives this prototype a transparent baseline that is easy to inspect, fast to run locally, and strong enough to support prioritization and decision rules.
+
+That makes the model a good fit for the story this project is telling:
+
+- the score is understandable, not opaque
+- the coefficients make the main churn drivers visible
+- the model is lightweight enough for a local demo and public deployment
+- the emphasis stays on turning risk into action, not on model complexity for its own sake
 
 ### Model diagnostics and feature direction
 
 ![Model diagnostics and coefficients](docs/assets/model_diagnostics.png)
-<<<<<<< HEAD
-
-=======
->>>>>>> 291a624 (Fix README screenshot references)
 
 ## Why synthetic data is acceptable here
 
