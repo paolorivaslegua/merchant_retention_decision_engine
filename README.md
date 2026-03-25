@@ -22,7 +22,10 @@ This project answers that question by combining merchant risk signals, churn sco
 ## Dashboard overview
 
 ![Dashboard overview](docs/assets/dashboard_overview.png)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 291a624 (Fix README screenshot references)
 
 ## Why this project
 
@@ -176,7 +179,10 @@ The app loads saved artifacts and provides:
 ### Risk and revenue map with ranked merchant queue
 
 ![Risk and revenue map with ranked merchant queue](docs/assets/risk_revenue_priority.png)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 291a624 (Fix README screenshot references)
 
 ## Deploy as a public website
 
@@ -214,7 +220,10 @@ The project uses logistic regression intentionally:
 ### Model diagnostics and feature direction
 
 ![Model diagnostics and coefficients](docs/assets/model_diagnostics.png)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 291a624 (Fix README screenshot references)
 
 ## Why synthetic data is acceptable here
 
