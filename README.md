@@ -4,6 +4,10 @@ A portfolio-ready prototype for a payments company that combines churn predictio
 
 The project simulates a realistic merchant portfolio, estimates churn risk with a transparent logistic regression model, and converts model output into business actions such as priority outreach, incentives, product education, or monitoring. The emphasis is on operational decision-making rather than model complexity.
 
+## Live dashboard
+
+[Open the public Streamlit app](https://merchantretentiondecisionengine-paolorivaslegua.streamlit.app/)
+
 ## Portfolio highlights
 
 - end-to-end local Python pipeline
